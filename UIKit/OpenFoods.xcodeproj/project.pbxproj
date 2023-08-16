@@ -3,30 +3,48 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 70;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		009C4C6C1D9F0CD600F0BC6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */; };
-		009C4C6E1D9F0CD600F0BC6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C6D1D9F0CD600F0BC6C /* ViewController.swift */; };
-		009C4C711D9F0CD600F0BC6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */; };
-		009C4C731D9F0CD600F0BC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C721D9F0CD600F0BC6C /* Assets.xcassets */; };
-		009C4C761D9F0CD600F0BC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
+/* Begin PBXContainerItemProxy section */
+		3A13EF462D99DBD600381676 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 009C4C601D9F0CD600F0BC6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 009C4C671D9F0CD600F0BC6C;
+			remoteInfo = OpenFoods;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		009C4C681D9F0CD600F0BC6C /* OpenFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		009C4C6D1D9F0CD600F0BC6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		009C4C701D9F0CD600F0BC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		009C4C721D9F0CD600F0BC6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		009C4C751D9F0CD600F0BC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		009C4C771D9F0CD600F0BC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		009C4C9D1D9F104800F0BC6C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3A13EF422D99DBD600381676 /* OpenFoodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3A13F0292D99DEC100381676 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 009C4C671D9F0CD600F0BC6C /* OpenFoods */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3A13EF432D99DBD600381676 /* OpenFoodsTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OpenFoodsTests; sourceTree = "<group>"; };
+		3A13F0222D99DEC100381676 /* OpenFoods */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3A13F0292D99DEC100381676 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OpenFoods; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		009C4C651D9F0CD600F0BC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A13EF3F2D99DBD600381676 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,9 +57,9 @@
 		009C4C5F1D9F0CD600F0BC6C = {
 			isa = PBXGroup;
 			children = (
-				009C4C6A1D9F0CD600F0BC6C /* OpenFoods */,
+				3A13F0222D99DEC100381676 /* OpenFoods */,
+				3A13EF432D99DBD600381676 /* OpenFoodsTests */,
 				009C4C691D9F0CD600F0BC6C /* Products */,
-				009C4C9D1D9F104800F0BC6C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,21 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				009C4C681D9F0CD600F0BC6C /* OpenFoods.app */,
+				3A13EF422D99DBD600381676 /* OpenFoodsTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		009C4C6A1D9F0CD600F0BC6C /* OpenFoods */ = {
-			isa = PBXGroup;
-			children = (
-				009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */,
-				009C4C6D1D9F0CD600F0BC6C /* ViewController.swift */,
-				009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */,
-				009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */,
-				009C4C721D9F0CD600F0BC6C /* Assets.xcassets */,
-				009C4C771D9F0CD600F0BC6C /* Info.plist */,
-			);
-			path = OpenFoods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,10 +87,36 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				3A13F0222D99DEC100381676 /* OpenFoods */,
+			);
 			name = OpenFoods;
 			productName = OpenTweet;
 			productReference = 009C4C681D9F0CD600F0BC6C /* OpenFoods.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3A13EF412D99DBD600381676 /* OpenFoodsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A13EF482D99DBD600381676 /* Build configuration list for PBXNativeTarget "OpenFoodsTests" */;
+			buildPhases = (
+				3A13EF3E2D99DBD600381676 /* Sources */,
+				3A13EF3F2D99DBD600381676 /* Frameworks */,
+				3A13EF402D99DBD600381676 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A13EF472D99DBD600381676 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3A13EF432D99DBD600381676 /* OpenFoodsTests */,
+			);
+			name = OpenFoodsTests;
+			packageProductDependencies = (
+			);
+			productName = OpenFoodsTests;
+			productReference = 3A13EF422D99DBD600381676 /* OpenFoodsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,7 +125,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "OpenTable, Inc.";
 				TargetAttributes = {
@@ -101,6 +133,10 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = QPU8QS3E62;
 						ProvisioningStyle = Automatic;
+					};
+					3A13EF412D99DBD600381676 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 009C4C671D9F0CD600F0BC6C;
 					};
 				};
 			};
@@ -118,6 +154,7 @@
 			projectRoot = "";
 			targets = (
 				009C4C671D9F0CD600F0BC6C /* OpenFoods */,
+				3A13EF412D99DBD600381676 /* OpenFoodsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,9 +164,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009C4C761D9F0CD600F0BC6C /* LaunchScreen.storyboard in Resources */,
-				009C4C731D9F0CD600F0BC6C /* Assets.xcassets in Resources */,
-				009C4C711D9F0CD600F0BC6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A13EF402D99DBD600381676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,31 +181,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009C4C6E1D9F0CD600F0BC6C /* ViewController.swift in Sources */,
-				009C4C6C1D9F0CD600F0BC6C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A13EF3E2D99DBD600381676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				009C4C701D9F0CD600F0BC6C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		3A13EF472D99DBD600381676 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 009C4C671D9F0CD600F0BC6C /* OpenFoods */;
+			targetProxy = 3A13EF462D99DBD600381676 /* PBXContainerItemProxy */;
 		};
-		009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				009C4C751D9F0CD600F0BC6C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		009C4C8E1D9F0CD600F0BC6C /* Debug */ = {
@@ -218,12 +253,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -273,11 +309,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -289,14 +326,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenFoods/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -306,14 +341,64 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QPU8QS3E62;
 				INFOPLIST_FILE = OpenFoods/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3A13EF492D99DBD600381676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPU8QS3E62;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openTable.OpenFoodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoods.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenFoods";
+			};
+			name = Debug;
+		};
+		3A13EF4A2D99DBD600381676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPU8QS3E62;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openTable.OpenFoodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoods.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenFoods";
 			};
 			name = Release;
 		};
@@ -334,6 +419,15 @@
 			buildConfigurations = (
 				009C4C911D9F0CD600F0BC6C /* Debug */,
 				009C4C921D9F0CD600F0BC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A13EF482D99DBD600381676 /* Build configuration list for PBXNativeTarget "OpenFoodsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A13EF492D99DBD600381676 /* Debug */,
+				3A13EF4A2D99DBD600381676 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

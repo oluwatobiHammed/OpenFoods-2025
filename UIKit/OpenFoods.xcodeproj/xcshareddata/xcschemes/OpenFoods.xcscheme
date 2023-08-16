@@ -27,16 +27,18 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "009C4C671D9F0CD600F0BC6C"
-            BuildableName = "OpenTweet.app"
-            BlueprintName = "OpenTweet"
-            ReferencedContainer = "container:OpenTweet.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A13EF412D99DBD600381676"
+               BuildableName = "OpenFoodsTests.xctest"
+               BlueprintName = "OpenFoodsTests"
+               ReferencedContainer = "container:OpenFoods.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
