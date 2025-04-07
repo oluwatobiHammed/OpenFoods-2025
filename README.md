@@ -2,36 +2,36 @@
 
 👋 Hi! Welcome to your app coding excercise.
 
-This is a very simple application. We should have provided you with a unique URL for the API, this is just for you. You are asked to write the app that will display a list of foods from the API. The API also allows you to like and unlike foods.
+This is a very simple application. Your recruiter should provide you with a unique URL for the API, this is just for you. You are asked to write the app that will display a list of foods from the API. The API also allows you to like and unlike foods.
 
 ## Minimum requirements
 
-- Fork or clone the repo
+- Fork or clone the repo.
 - Parse the list of foods.
 - Display the foods in the order the service defines them from the 0th page. The app should display:
   - The name of the food.
   - The description of the food, this is variable length so the cells must be properly sized to the content or this can be truncated and the full description can be shown on another screen the user navigates to.
   - The country of origin, this could be the text, an emoji, an image or something else.
-  - Do you like this food. This should be an image or a symbol of some kind.
-- Handle any errors or slow requests gracefully.
+  - Do you like this food? This should be an image or a symbol of some kind.
+- Handle any server side errors or slow requests gracefully.
 - When done, send a zipped version of the project via email.
 
-We've provided some template projects but feel free to use whatever technologies you think are most appropiate.
+We've provided a template Android project for Android candidates and template SwiftUI and UIKit projects for iOS candidates.  Please feel free to use these or create a brand new project utilising whatever technologies you think are most appropiate for the role that you are applying for.  
 
 ## Bonuses (in no particular order)
 
 - Access all the pages of the results.
 - Add a button to like or unlike a food and then reload the list of foods.
-- Show the image of the food. (Feel free to use AFNetworking / AlamoFire or just use `URLSession` for that.)
+- Show the image of the food.
 - Show when the food was last updated.
 - Animate or highlight a food when it is selected (e.g. make it "bigger", in an animated fashion.)
 - Add tests.
-- Anything else you might think of that showcases a UIKit feature: `UIDynamics`, parallax effect, the list is endless.
+- Anything else you might think of that showcases a user interface feature, for example a parallax effect, the list is endless.
 
 ## What the assignment will be judged on
 
 - Accuracy of the result (e.g. is the cell sizing pixel perfect, dates are properly formatted, the app doesn't crash, project builds and runs with no extra step, etc.)
-- Proper usage of UIKit apis (e.g. are cells properly reused, a back button must have a proper title, how well does it scale to various device sizes, etc.)
+- Proper usage of Android or Apple APIs (e.g. are cells properly reused, a back button must have a proper title, how well does it scale to various device sizes, etc.)
 - Overall code quality: clarity, conciseness, quality of comments. Robustness and maintainability matter a lot more than clever one liners.
 - If you end up short on time and/or can't fix a specific bug or finish a given feature, update this readme with what the bug is, and how you think you can fix had you more time.
 - Bonuses are exactly that, bonuses. If you can complete one or more, good. Otherwise, don't sweat it.
@@ -44,7 +44,7 @@ We've provided some template projects but feel free to use whatever technologies
 
 ## API
 
-You recruiter/hiring manager should share with you a unique URL for the API. `userId` below is unique to you. You will find that in the unique URL provided, the API will not work without this. If you have any issues please reach out over email.
+Your recruiter should share with you a unique URL for the API. `userId` below is unique to you. You will find that in the unique URL provided, the API will not work without this. If you have any issues please reach out over email.
 
 ### Food
 
