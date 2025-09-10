@@ -26,6 +26,7 @@ We've provided a template Android project for Android candidates and template Sw
 - Show when the food was last updated.
 - Animate or highlight a food when it is selected (e.g. make it "bigger", in an animated fashion.)
 - Add tests.
+- Cache images.
 - Anything else you might think of that showcases a user interface feature, for example a parallax effect, the list is endless.
 
 ## What the assignment will be judged on
