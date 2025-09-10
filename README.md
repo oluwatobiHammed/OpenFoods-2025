@@ -96,6 +96,13 @@ You can `PUT` an unlike to `api/v1/<userId>/food/<id>/unlike` to set `isLiked` t
 { "success": true }
 ```
 
+## Gen AI
+
+We recognize AI tools  can be useful in professional workflows, and we want to take a clear and fair approach to their use in our interview process. Our goal is to understand your thinking, decision-making, and experience — not just the final output. With that in mind, we ask that all candidates follow these guidelines:
+- Disclose any AI use during the interview process — whether for generating code, writing, visuals, or research.
+- Take ownership of your work. If AI assists you, be prepared to explain your approach and why your solution is effective.
+- Use AI as a support, not a crutch. We welcome AI-assisted work when it enhances your thinking — but unedited or uncritical copy-paste responses are discouraged and may reflect poorly on your candidacy.
+
 ## Fin
 
 Happy coding!
