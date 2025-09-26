@@ -68,8 +68,8 @@ struct ContentView: View {
             }
             .navigationTitle("OpenFoods")
             .navigationBarTitleDisplayMode(.large)
-            .onAppear{
-                viewModel.configure()
+            .task {
+                await viewModel.configure()
             }
         }
 
