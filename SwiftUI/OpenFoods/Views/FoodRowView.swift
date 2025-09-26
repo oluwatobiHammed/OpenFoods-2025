@@ -8,6 +8,98 @@
 import SwiftUI
 
 
+/// A SwiftUI row view that displays a summary of a `Food` item, including its image,
+/// name, country flag, brief description, last-updated date, and a like button.
+/// 
+/// The row supports:
+/// - Tap to present a detail sheet (`FoodDetailView`) for the given `food`.
+/// - Press feedback animations on both the row and the heart icon.
+/// - Toggling a like state via a view model (`FoodListViewModel`) and keeping a local
+///   `isLiked` cache in sync with the model.
+///
+/// - Requirements:
+///   - An instance of `FoodListViewModel` must be injected into the environment using
+///     `.environmentObject(...)`.
+///   - The provided `Food` must exist in `viewModel.foods` for the local like state
+///     to mirror accurately.
+///
+/// - Accessibility:
+///   - Uses system text styles (`.headline`, `.caption`, `.caption2`) for Dynamic Type.
+///   - Consider adding explicit `.accessibilityLabel` and `.accessibilityValue` modifiers
+///     to the like button and image for improved VoiceOver support.
+///
+/// - SeeAlso:
+///   - ``FoodListViewModel``
+///   - ``FoodDetailView``
+///   - ``AsyncImageView``
+///
+/// - Threading:
+///   - The like toggle is performed in an async `Task`. If your view model is not
+///     main-actor isolated, ensure SwiftUI state updates occur on the main actor.
+///
+/// - Styling:
+///   - The row uses `.ultraThinMaterial` as a background and a subtle drop shadow.
+///   - The heart icon uses a spring animation to scale on press.
+///
+
+/// The `Food` model that this row renders.
+
+/// The list view model supplied via the environment, responsible for providing and mutating
+/// the list of foods, including toggling the liked state.
+
+/// Tracks whether the row or the heart icon is currently in a pressed (animated) state.
+/// This drives the scale effect animations for press feedback.
+
+/// Controls presentation of the `FoodDetailView` sheet when the row is tapped.
+
+/// A local cache of the like state for the `food`. It mirrors `viewModel.foods` and is
+/// refreshed on appear and when the detail sheet is dismissed. Falls back to `false` if
+/// the `food` cannot be found in the model.
+///
+/// - Note: This local state is used to drive the heart icon immediately while the model
+/// publishes its change; it should remain consistent with the source of truth in the view model.
+
+/// The primary view hierarchy for the row.
+/// 
+/// - Layout:
+///   - Leading: `AsyncImageView` thumbnail of the food.
+///   - Center: Name + flag (top), description (middle), updated date + heart button (bottom).
+///   - Trailing: Spacer for alignment.
+///
+/// - Gestures:
+///   - The entire row is wrapped in a button to open the detail sheet.
+///   - A zero-duration long-press gesture is used to track press state (`isPressed`) for
+///     subtle scale animations on touch down/up.
+///
+/// - Animations:
+///   - Row: `easeInOut` scaling when pressed.
+///   - Heart: `spring` scaling when toggled.
+///
+/// - Navigation:
+///   - Presents `FoodDetailView` via `.sheet(isPresented:)`.
+///   - On dismissal, refreshes `isLiked` from the view model to ensure consistency.
+///
+/// - State Sync:
+///   - On appear, synchronizes `isLiked` with the corresponding item in `viewModel.foods`.
+
+/// Toggles the liked state for the current `food`.
+///
+/// This method:
+/// 1. Starts a short press animation by setting `isPressed` to `true`.
+/// 2. Launches an asynchronous task that calls `FoodListViewModel.toggleLike(for:)` to flip
+///    the like/unlike state in the data model.
+/// 3. After the model finishes updating, refreshes the local `isLiked` flag by reading the
+///    updated item from `viewModel.foods`.
+/// 4. Ends the press animation by resetting `isPressed` to `false` after a 0.3‑second delay,
+///    which drives the heart icon scale animation.
+///
+/// - Important: Changes to `isPressed` and `isLiked` trigger SwiftUI view updates. Ensure
+///   `FoodListViewModel.toggleLike(for:)` publishes changes so the lookup reflects the new state.
+/// - Note: If the `food` cannot be found in `viewModel.foods`, `isLiked` falls back to `false`.
+/// - Threading: The toggle runs inside a `Task`. If `FoodListViewModel` is not main‑actor isolated,
+///   prefer updating SwiftUI state on the main actor to avoid concurrency warnings.
+/// - SeeAlso: ``FoodListViewModel/toggleLike(for:)``
+/// - Returns: Nothing.
 struct FoodRowView: View {
     let food: Food
     @EnvironmentObject var viewModel: FoodListViewModel
@@ -90,6 +182,19 @@ struct FoodRowView: View {
         
     }
     
+    /// Toggles the liked state for the current `food`.
+    ///
+    /// This method:
+    /// 1. Starts a short press animation by setting `isPressed` to `true`.
+    /// 2. Launches an asynchronous task that calls `FoodListViewModel.toggleLike(for:)` to flip the like/unlike state in the data model.
+    /// 3. After the model finishes updating, refreshes the local `isLiked` flag by reading the updated item from `viewModel.foods`.
+    /// 4. Ends the press animation by resetting `isPressed` to `false` after a 0.3‑second delay, which drives the heart icon scale animation.
+    ///
+    /// - Important: Changes to `isPressed` and `isLiked` trigger SwiftUI view updates. Ensure `FoodListViewModel.toggleLike(for:)` publishes changes so the lookup reflects the new state.
+    /// - Note: If the `food` cannot be found in `viewModel.foods`, `isLiked` falls back to `false`.
+    /// - Threading: The toggle runs inside a `Task`. If `FoodListViewModel` is not main‑actor isolated, prefer updating SwiftUI state on the main actor to avoid concurrency warnings.
+    /// - SeeAlso: ``FoodListViewModel/toggleLike(for:)``
+    /// - Returns: Nothing.
     private func toggleLike() {
         isPressed = true
         
