@@ -30,8 +30,8 @@ struct AsyncImageView: View {
                     .background(Color.gray.opacity(0.2))
             }
         }
-        .task {
-            await loader.loadImage(from: urlString)
+        .onAppear {
+             loader.loadImage(from: urlString)
         }
     }
 }
