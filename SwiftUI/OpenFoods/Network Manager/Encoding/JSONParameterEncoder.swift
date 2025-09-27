@@ -9,6 +9,21 @@ import Foundation
 
 public struct JSONParameterEncoder: ParameterEncoder {
 
+    /**
+     Encodes the provided parameters as a JSON payload and assigns it to the `httpBody` of the given `URLRequest`.
+     
+     This method uses `JSONSerialization` with the `.prettyPrinted` option to convert the supplied key–value pairs into JSON data. If serialization fails (for example, because the parameters contain a non-JSON-representable value), the method throws `NetworkError.encodingFailed`.
+     
+     - Parameters:
+     - urlRequest: The request to modify. Supplied as `inout` so its `httpBody` can be set to the encoded JSON data. Any existing body will be overwritten.
+     - parameters: A dictionary of values to be serialized into JSON. All values must be JSON-representable (e.g., `String`, `Number`, `Bool`, `Array`, `Dictionary`, or `NSNull`).
+     
+     - Throws: `NetworkError.encodingFailed` if the parameters cannot be serialized to JSON.
+
+ - Important: This method does not set HTTP headers. Callers should set the `Content-Type` header to `application/json` (and optionally `Accept: application/json`) on the `URLRequest` as appropriate.
+
+ - Note: The `.prettyPrinted` formatting is used for readability and may increase payload size; it is not required by servers.
+ */
     public func encode(
         urlRequest: inout URLRequest,
         withParameters parameters: Parameters
@@ -22,6 +37,21 @@ public struct JSONParameterEncoder: ParameterEncoder {
         }
     }
     
+    /**
+     Encodes the provided array parameters as a JSON payload and assigns it to the `httpBody` of the given `URLRequest`.
+     
+     This method uses `JSONEncoder` with the `.prettyPrinted` output formatting to serialize the supplied array (or encodable collection) into JSON data. If encoding fails (for example, because the elements are not `Encodable` or contain non-JSON-representable values), the method throws `NetworkError.encodingFailed`.
+     
+     - Parameters:
+     - urlRequest: The request to modify. Supplied as `inout` so its `httpBody` can be set to the encoded JSON data. Any existing body will be overwritten.
+     - arrayParameters: The encodable collection to be serialized into JSON and set as the request body.
+     
+     - Throws: `NetworkError.encodingFailed` if the parameters cannot be encoded to JSON.
+
+ - Important: This method does not set HTTP headers. Callers should set the `Content-Type` header to `application/json` (and optionally `Accept: application/json`) on the `URLRequest` as appropriate.
+
+ - Note: The `.prettyPrinted` formatting is used for readability and may increase payload size; it is not required by servers.
+ */
     public func encode(
         urlRequest: inout URLRequest,
         withArrayParameters arrayParameters: ArrayParameters
@@ -38,6 +68,35 @@ public struct JSONParameterEncoder: ParameterEncoder {
     }
     
     
+    
+    /**
+     Creates a multipart/form-data HTTP body that includes optional text fields and a single binary payload (e.g., an image/file).
+     
+     This helper assembles a body using the supplied `boundary`, appends each key–value pair in `parameters` as a regular form field, and then appends one file part using `data`, `mimeType`, and `fieldName`. The resulting `Data` ends with the required closing boundary.
+     
+     - Parameters:
+     - parameters: Optional dictionary of additional form fields to include. Values are converted to strings via interpolation. The order of fields is not guaranteed.
+     - boundary: The multipart boundary string used to separate parts. This same value must be supplied in the request’s `Content-Type` header (`multipart/form-data; boundary=...`).
+     - data: The binary data to include as a single file part (e.g., JPEG/PNG bytes).
+     - mimeType: The MIME type of the binary data (e.g., `"image/jpeg"`, `"image/png"`, `"application/pdf"`).
+     - fieldName: The form field name for the file part (e.g., `"avatar"`, `"file"`).
+     
+     - Returns: A `Data` value containing the complete multipart/form-data body, including the closing boundary.
+     
+     - Important:
+     - You must set the request header `Content-Type` to `multipart/form-data; boundary=\(boundary)`.
+     - The file part’s `filename` is hard-coded as `"profile.jpg"`; adjust the implementation if you need to control the filename.
+     - Ensure `boundary` is unique and does not appear in any field values or file data.
+     
+     - Notes:
+     - Uses CRLF (`\r\n`) line breaks per RFC 7578.
+   - Parameters are appended as plain text fields.
+   - This function does not modify headers; it only returns the HTTP body.
+
+ - Complexity: O(p + d) where `p` is the number of parameters and `d` is the size of `data`.
+
+ - See also: RFC 7578 (Multipart Form Data)
+ */
     
     func createBody(
         parameters: Parameters? = nil,
