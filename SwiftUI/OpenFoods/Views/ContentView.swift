@@ -34,27 +34,7 @@ struct ContentView: View {
         
     }
     
-    private var titleGradient: LinearGradient {
-        return LinearGradient(
-            colors: colorScheme == .dark ?
-            [.cyan, .blue, .purple]
-            : [.blue, .purple, .pink],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-        
-    }
-    
-    private var buttonGradient: LinearGradient {
-        return LinearGradient(
-            colors: colorScheme == .dark ?
-            [Color.cyan, Color.blue] :
-                [Color.blue, Color.purple],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-        
-    }
+
     
     var body: some View {
         NavigationView {
@@ -66,7 +46,7 @@ struct ContentView: View {
                         .environmentObject(viewModel)
 
             }
-            .navigationTitle("OpenFoods")
+            .navigationTitle("app_title".localized)
             .navigationBarTitleDisplayMode(.large)
             .task {
                 await viewModel.configure()
@@ -78,16 +58,5 @@ struct ContentView: View {
 //#Preview {
 //    ContentView()
 //}
-//extension Text {
-//    func multicolorGlow() -> some View {
-//        self
-//            .foregroundStyle(
-//                LinearGradient(
-//                    colors: [.blue, .purple, .pink],
-//                    startPoint: .leading,
-//                    endPoint: .trailing
-//                )
-//            )
-//    }
-//}
+
 

@@ -130,7 +130,7 @@ class FoodListViewModel: ObservableObject {
              isOfflineMode = true
              if foods.isEmpty {
                  hasError = true
-                 errorMessage = "No internet connection and no cached data available"
+                 errorMessage = "no_internet".localized
              }
              return
          }
