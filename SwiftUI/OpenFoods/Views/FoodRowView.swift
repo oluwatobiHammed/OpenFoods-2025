@@ -134,7 +134,7 @@ struct FoodRowView: View {
                         .multilineTextAlignment(.leading)
                     
                     HStack {
-                        Text("Updated: \(food.formattedDate)")
+                        Text("\("updated".localized): \(food.formattedDate)")
                             .font(.caption2)
                             .foregroundColor(.secondary)
                         

@@ -59,15 +59,34 @@ struct FoodListView: View {
     
     var body: some View {
         VStack {
+            
+            // Offline indicator
+                  if viewModel.isOfflineMode {
+                      HStack {
+                          Image(systemName: "wifi.slash")
+                          Text("offline_mode".localized)
+                          Spacer()
+                          let (_, pendingCount) = viewModel.getCacheInfo()
+                          if pendingCount > 0 {
+                              Text("\(pendingCount) \("pending".localized)")
+                                  .font(.caption)
+                                  .foregroundColor(.orange)
+                          }
+                      }
+                      .padding(.horizontal)
+                      .padding(.vertical, 8)
+                      .background(Color.orange.opacity(0.2))
+                      .foregroundColor(.orange)
+                  }
             if viewModel.isLoading && viewModel.foods.isEmpty {
                 VStack {
                     ProgressView()
                         .scaleEffect(1.5)
                         .tint(.white)
                     
-                    Text("Loading delicious foods...")
-                        .foregroundColor(.white)
-                        .padding(.top)
+                    Text("loading_foods".localized)
+                                         .foregroundColor(.white)
+                                         .padding(.top)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if viewModel.hasError {
@@ -96,7 +115,7 @@ struct FoodListView: View {
                             Spacer()
                             ProgressView()
                                 .scaleEffect(0.8)
-                            Text("Loading more...")
+                            Text("loading_more".localized)
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                             Spacer()

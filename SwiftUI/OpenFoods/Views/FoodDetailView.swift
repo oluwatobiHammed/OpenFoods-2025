@@ -102,11 +102,11 @@ struct FoodDetailView: View {
                                 .font(.title)
                         }
                         
-                        Text("Description")
+                        Text("description".localized)
                             .font(.headline)
                             .fontWeight(.semibold)
                         
-                        Text(food.description.isEmpty ? "No description available." : food.description)
+                        Text(food.description.isEmpty ? "no_description".localized : food.description)
                             .font(.body)
                             .foregroundColor(.secondary)
                         
@@ -114,7 +114,7 @@ struct FoodDetailView: View {
                         
                         HStack {
                             VStack(alignment: .leading) {
-                                Text("Last Updated")
+                                Text("last_updated".localized)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                                 Text(food.formattedDate)
@@ -132,7 +132,7 @@ struct FoodDetailView: View {
                                 
                                 HStack {
                                     Image(systemName: isLiked ? "heart.fill" : "heart")
-                                    Text(isLiked ? "Unlike" : "Like")
+                                    Text(isLiked ? "unlike".localized : "like".localized)
                                 }
                                 .foregroundColor(isLiked ? .red : .blue)
                             }
@@ -144,11 +144,11 @@ struct FoodDetailView: View {
                     .padding()
                 }
             }
-            .navigationTitle("Food Details")
+            .navigationTitle("food_details".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("done".localized) {
                         dismissCallback?()
                         dismiss()
                     }
