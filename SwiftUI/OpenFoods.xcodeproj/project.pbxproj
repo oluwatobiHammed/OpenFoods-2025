@@ -14,11 +14,19 @@
 			remoteGlobalIDString = 3A13EFE82D99DD9F00381676;
 			remoteInfo = OpenFoods;
 		};
+		F14BF1A42E8A0980002D8B70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A13EFE12D99DD9F00381676 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A13EFE82D99DD9F00381676;
+			remoteInfo = OpenFoods;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A13EFE92D99DD9F00381676 /* OpenFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A13EFF92D99DDA000381676 /* OpenFoodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14BF19E2E8A0980002D8B70 /* OpenFoodsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -30,6 +38,11 @@
 		3A13EFFC2D99DDA000381676 /* OpenFoodsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = OpenFoodsTests;
+			sourceTree = "<group>";
+		};
+		F14BF19F2E8A0980002D8B70 /* OpenFoodsUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OpenFoodsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -49,6 +62,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F14BF19B2E8A0980002D8B70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +77,7 @@
 			children = (
 				3A13EFEB2D99DD9F00381676 /* OpenFoods */,
 				3A13EFFC2D99DDA000381676 /* OpenFoodsTests */,
+				F14BF19F2E8A0980002D8B70 /* OpenFoodsUITests */,
 				3A13EFEA2D99DD9F00381676 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +87,7 @@
 			children = (
 				3A13EFE92D99DD9F00381676 /* OpenFoods.app */,
 				3A13EFF92D99DDA000381676 /* OpenFoodsTests.xctest */,
+				F14BF19E2E8A0980002D8B70 /* OpenFoodsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +140,29 @@
 			productReference = 3A13EFF92D99DDA000381676 /* OpenFoodsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F14BF19D2E8A0980002D8B70 /* OpenFoodsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14BF1A62E8A0980002D8B70 /* Build configuration list for PBXNativeTarget "OpenFoodsUITests" */;
+			buildPhases = (
+				F14BF19A2E8A0980002D8B70 /* Sources */,
+				F14BF19B2E8A0980002D8B70 /* Frameworks */,
+				F14BF19C2E8A0980002D8B70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F14BF1A52E8A0980002D8B70 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F14BF19F2E8A0980002D8B70 /* OpenFoodsUITests */,
+			);
+			name = OpenFoodsUITests;
+			packageProductDependencies = (
+			);
+			productName = OpenFoodsUITests;
+			productReference = F14BF19E2E8A0980002D8B70 /* OpenFoodsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -125,7 +170,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					3A13EFE82D99DD9F00381676 = {
@@ -133,6 +178,10 @@
 					};
 					3A13EFF82D99DDA000381676 = {
 						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3A13EFE82D99DD9F00381676;
+					};
+					F14BF19D2E8A0980002D8B70 = {
+						CreatedOnToolsVersion = 26.0.1;
 						TestTargetID = 3A13EFE82D99DD9F00381676;
 					};
 				};
@@ -153,6 +202,7 @@
 			targets = (
 				3A13EFE82D99DD9F00381676 /* OpenFoods */,
 				3A13EFF82D99DDA000381676 /* OpenFoodsTests */,
+				F14BF19D2E8A0980002D8B70 /* OpenFoodsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -166,6 +216,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3A13EFF72D99DDA000381676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14BF19C2E8A0980002D8B70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,6 +246,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F14BF19A2E8A0980002D8B70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -196,6 +260,11 @@
 			isa = PBXTargetDependency;
 			target = 3A13EFE82D99DD9F00381676 /* OpenFoods */;
 			targetProxy = 3A13EFFA2D99DDA000381676 /* PBXContainerItemProxy */;
+		};
+		F14BF1A52E8A0980002D8B70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A13EFE82D99DD9F00381676 /* OpenFoods */;
+			targetProxy = F14BF1A42E8A0980002D8B70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -391,6 +460,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K5BT8EBBM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -409,6 +479,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K5BT8EBBM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -418,6 +489,48 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoods.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenFoods";
+			};
+			name = Release;
+		};
+		F14BF1A72E8A0980002D8B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K5BT8EBBM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightSpeed.OpenFoodsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenFoods;
+			};
+			name = Debug;
+		};
+		F14BF1A82E8A0980002D8B70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K5BT8EBBM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightSpeed.OpenFoodsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenFoods;
 			};
 			name = Release;
 		};
@@ -447,6 +560,15 @@
 			buildConfigurations = (
 				3A13F0112D99DDA000381676 /* Debug */,
 				3A13F0122D99DDA000381676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F14BF1A62E8A0980002D8B70 /* Build configuration list for PBXNativeTarget "OpenFoodsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F14BF1A72E8A0980002D8B70 /* Debug */,
+				F14BF1A82E8A0980002D8B70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

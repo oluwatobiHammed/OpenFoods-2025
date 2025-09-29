@@ -106,13 +106,29 @@ struct FoodRowView: View {
     @State private var isPressed = false
     @State private var showingDetail = false
     @State var isLiked = false
+    @State private var isSelected = false
     
     var body: some View {
-        Button(action: { showingDetail = true }) {
+        Button(action: {
+            // Animate selection before navigation
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                isSelected = true
+            }
+            
+            // Delay navigation slightly to show animation
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                showingDetail = true
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                    isSelected = false
+                }
+            }
+           
+        }) {
             HStack(spacing: 15) {
                 AsyncImageView(urlString: food.photoURL)
                     .frame(width: 80, height: 80)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .shadow(color: isSelected ? .blue.opacity(0.5) : .clear, radius: 8, x: 0, y: 4)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
@@ -125,6 +141,7 @@ struct FoodRowView: View {
                         
                         Text(food.flagEmoji)
                             .font(.title2)
+                            .scaleEffect(isSelected ? 1.2 : 1.0)
                     }
                     
                     Text(food.description)
@@ -157,9 +174,14 @@ struct FoodRowView: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(.ultraThinMaterial)
-                    .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 2)
+                    .shadow(color: .black.opacity(isSelected ? 0.3 : 0.1), radius: isSelected ? 10 : 5, x: 0, y: isSelected ? 8 : 2)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                            .stroke(isSelected ? Color.blue.opacity(0.5) : Color.clear, lineWidth: 2)
+                                    )
             )
-            .scaleEffect(isPressed ? 0.98 : 1.0)
+            .scaleEffect(isSelected ? 1.05 : (isPressed ? 0.98 : 1.0))
+            .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
             .animation(.easeInOut(duration: 0.1), value: isPressed)
         }
         .buttonStyle(PlainButtonStyle())

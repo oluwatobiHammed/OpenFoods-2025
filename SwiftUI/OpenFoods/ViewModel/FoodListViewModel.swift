@@ -8,7 +8,7 @@
 import Foundation
 import  Combine
 
-@MainActor
+
 // MARK: - View Model
 class FoodListViewModel: ObservableObject {
     @Published var foods: [Food] = []
@@ -19,7 +19,7 @@ class FoodListViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isOfflineMode = false
     
-    private var networkManager: NetworkManager
+    private var networkManager: NetworkManagerProtocol
     private let localStorageManager = LocalStorageManager.shared
     private let networkMonitor = NetworkMonitor()
     private var currentPage = 0
@@ -29,7 +29,7 @@ class FoodListViewModel: ObservableObject {
     
     
     
-    init(networkManager: NetworkManager = NetworkManager()) {
+    init(networkManager: NetworkManagerProtocol = NetworkManager()) {
         
         self.networkManager = networkManager
         // Load cached data immediately
@@ -338,7 +338,7 @@ class FoodListViewModel: ObservableObject {
     ///   - `LocalStorageManager.saveFoods(_:)`
     ///   - `NetworkManager.fetchFoods(page:)`
     ///   - `NetworkMonitor.isConnected`
-     func loadFoods() async {
+    @MainActor func loadFoods() async {
          
          // Always show cached data first
          if foods.isEmpty {
@@ -442,7 +442,7 @@ class FoodListViewModel: ObservableObject {
     ///   - `refreshFoods()`
     ///   - `NetworkManager.fetchFoods(page:)`
     ///   - `LocalStorageManager.saveFoods(_:)`
-    func loadMoreFoodsIfNeeded() async {
+   @MainActor func loadMoreFoodsIfNeeded() async {
          guard canLoadMore && !isLoadingMore && !isLoading && !isOfflineMode else { return }
          
          isLoadingMore = true
