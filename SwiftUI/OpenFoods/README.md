@@ -107,3 +107,34 @@ We recognize AI tools  can be useful in professional workflows, and we want to t
 ## Fin
 
 Happy coding!
+
+
+## 🗺️ Roadmap
+
+  ## Version 1.0 (Current)
+
+    - ✅ Food list with pagination
+    - ✅ Like/unlike functionality
+    - ✅ Offline mode with sync
+    - ✅ 8 language support
+    - ✅ Dark mode support
+    - ✅ Image caching
+   
+   
+  ## Version 1.1 (Planned)
+
+    - Search functionality
+    - Filter by country
+    - Sort options (name, date, popularity)
+    - User authentication
+    - Personal favorites list
+    - Share foods on social media
+
+  ## Version 2.0 (Future)
+
+    - Recipe details
+    - Nutritional information
+    - Restaurant finder
+    - User reviews and ratings
+    - Food recommendations
+    - AR food preview
